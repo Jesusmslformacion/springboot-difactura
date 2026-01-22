@@ -3,6 +3,7 @@ package com.jesus.curso.springboot.di.factura.springboot_difactura.models;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -13,10 +14,11 @@ public class Invoice { //Clase Factura
     @Autowired //Inyeccion de dependencia
     private Client client;
 
-    @Value("${invoice.description}") //Inyeccion de valor desde properties
+    @Value("${invoice.description.office}") //Inyeccion de valor desde properties
     private String description;
 
     @Autowired //Inyeccion de dependencia
+    @Qualifier("default") //Especificar el bean a inyectar
     private List<Item> items;
 
     //Getters y Setters
