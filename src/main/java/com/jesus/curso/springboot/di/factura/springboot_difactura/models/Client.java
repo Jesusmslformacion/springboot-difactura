@@ -1,9 +1,16 @@
 package com.jesus.curso.springboot.di.factura.springboot_difactura.models;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component 
 public class Client { //Clase Cliente
 
     //Attributos
+    @Value("${client.name}") //Inyeccion de valor desde properties
     private String name; 
+    
+    @Value("${client.lastname}") //Inyeccion de valor desde properties
     private String lastname;
     
 
